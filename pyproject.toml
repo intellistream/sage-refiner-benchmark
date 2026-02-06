@@ -6,9 +6,9 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "isage-longbench-benchmark"
+name = "isage-refiner-benchmark"
 dynamic = ["version"]
-description = "LongBench benchmark module for the SAGE ecosystem"
+description = "Context compression and refiner algorithm benchmark framework for the SAGE ecosystem"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [
@@ -17,7 +17,8 @@ authors = [
 keywords = [
     "sage",
     "benchmark",
-    "longbench",
+    "refiner",
+    "context-compression",
     "evaluation",
     "intellistream",
 ]
@@ -42,7 +43,7 @@ dependencies = [
 license = "MIT"
 
 [project.optional-dependencies]
-longbench = [
+refiner = [
     "jieba>=0.42",
     "fuzzywuzzy>=0.18",
     "python-Levenshtein>=0.12",
@@ -59,10 +60,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/intellistream/sage-longbench-benchmark"
-Documentation = "https://github.com/intellistream/sage-longbench-benchmark#readme"
-Repository = "https://github.com/intellistream/sage-longbench-benchmark"
-Issues = "https://github.com/intellistream/sage-longbench-benchmark/issues"
+Homepage = "https://github.com/intellistream/sage-refiner-benchmark"
+Documentation = "https://github.com/intellistream/sage-refiner-benchmark#readme"
+Repository = "https://github.com/intellistream/sage-refiner-benchmark"
+Issues = "https://github.com/intellistream/sage-refiner-benchmark/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -73,7 +74,7 @@ include = ["sage*"]
 namespaces = true
 
 [tool.setuptools.dynamic]
-version = {attr = "sage.benchmark_longbench._version.__version__"}
+version = {attr = "sage.benchmark_refiner._version.__version__"}
 
 [tool.ruff]
 line-length = 100

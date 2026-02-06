@@ -1,10 +1,15 @@
 """
-LongBench Benchmark Module
-==========================
+Context Compression & Refiner Benchmark Module
+===============================================
 
-LongBench 长文本理解基准测试组件。
+上下文压缩与 Refiner 算法性能评估组件。
 
-来源: https://github.com/THUDM/LongBench
+支持的算法/数据集：
+- LongBench (THUDM/LongBench) - 长文本理解基准
+- LongRefiner - 上下文压缩算法
+- REFORM - 检索优化
+- Provence - 上下文剪枝
+- 其他自定义 Refiner 实现
 
 组件：
 - LongBenchBatch: 从 THUDM/LongBench 加载数据
@@ -12,7 +17,7 @@ LongBench 长文本理解基准测试组件。
 - LongBenchEvaluator: LongBench 官方评估指标
 
 使用示例：
-    from sage.benchmark_longbench import (
+    from sage.benchmark_refiner import (
         LongBenchBatch,
         LongBenchPromptor,
         LongBenchEvaluator,
@@ -41,7 +46,7 @@ LongBench 长文本理解基准测试组件。
       model_name: "Qwen/Qwen2.5-7B-Instruct"
 
 依赖安装：
-    pip install isage-longbench-benchmark[longbench]
+    pip install isage-refiner-benchmark[refiner]
 
     # 可选依赖说明：
     # - jieba: 中文分词（中文数据集评估需要）
