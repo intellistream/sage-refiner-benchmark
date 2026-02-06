@@ -1,0 +1,112 @@
+[build-system]
+requires = [
+    "setuptools>=64",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "isage-longbench-benchmark"
+dynamic = ["version"]
+description = "LongBench benchmark module for the SAGE ecosystem"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "IntelliStream Team", email = "shuhao_zhang@hust.edu.cn" },
+]
+keywords = [
+    "sage",
+    "benchmark",
+    "longbench",
+    "evaluation",
+    "intellistream",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "isage-common",
+    "isage-kernel",
+    "isage-libs",
+    "datasets>=2.14.0",
+]
+
+license = "MIT"
+
+[project.optional-dependencies]
+longbench = [
+    "jieba>=0.42",
+    "fuzzywuzzy>=0.18",
+    "python-Levenshtein>=0.12",
+    "rouge>=1.0.0",
+]
+
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "ruff==0.14.6",
+    "pre-commit>=3.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/intellistream/sage-longbench-benchmark"
+Documentation = "https://github.com/intellistream/sage-longbench-benchmark#readme"
+Repository = "https://github.com/intellistream/sage-longbench-benchmark"
+Issues = "https://github.com/intellistream/sage-longbench-benchmark/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["sage*"]
+namespaces = true
+
+[tool.setuptools.dynamic]
+version = {attr = "sage.benchmark_longbench._version.__version__"}
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = [
+    "E501",
+    "F401",
+    "F403",
+    "F405",
+    "F841",
+    "E712",
+    "E402",
+    "E741",
+    "E722",
+    "W293",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+    "src",
+]
+python_files = [
+    "test_*.py",
+    "*_test.py",
+]
+addopts = [
+    "-ra",
+    "--verbose",
+]
