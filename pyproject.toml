@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "isage-refiner-benchmark"
-dynamic = ["version"]
+version = "0.1.0.1"
 description = "Context compression and refiner algorithm benchmark framework for the SAGE ecosystem"
 readme = "README.md"
 requires-python = ">=3.11"
