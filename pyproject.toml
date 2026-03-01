@@ -43,14 +43,13 @@ dependencies = [
 license = "MIT"
 
 [project.optional-dependencies]
-refiner = [
+full = [
     "jieba>=0.42",
     "fuzzywuzzy>=0.18",
     "python-Levenshtein>=0.12",
     "rouge>=1.0.0",
 ]
 
-full = []
 dev = [
     # dev includes [full] — no need for a separate extras install
     "isage-refiner-benchmark[full]",
