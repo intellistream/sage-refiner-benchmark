@@ -1,4 +1,4 @@
 """Version information for sage-longbench-benchmark."""
-__version__ = "0.1.0.5"
+__version__ = "0.1.0.6"
 __author__ = "IntelliStream Team"
 __email__ = "shuhao_zhang@hust.edu.cn"
