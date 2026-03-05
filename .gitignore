@@ -1,7 +1,10 @@
 __pycache__/
 *.pyc
+*.egg-info/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
 .sage/
 .DS_Store
+dist/
+build/
