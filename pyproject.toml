@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "isage-refiner-benchmark"
-version = "0.1.0.1"
+version = "0.1.0.2"
 description = "Context compression and refiner algorithm benchmark framework for the SAGE ecosystem"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -43,7 +43,7 @@ dependencies = [
 license = "MIT"
 
 [project.optional-dependencies]
-refiner = [
+full = [
     "jieba>=0.42",
     "fuzzywuzzy>=0.18",
     "python-Levenshtein>=0.12",
@@ -51,6 +51,8 @@ refiner = [
 ]
 
 dev = [
+    # dev includes [full] — no need for a separate extras install
+    "isage-refiner-benchmark[full]",
     "pytest>=7.0.0",
     "pytest-cov>=4.0.0",
     "black>=23.0.0",
